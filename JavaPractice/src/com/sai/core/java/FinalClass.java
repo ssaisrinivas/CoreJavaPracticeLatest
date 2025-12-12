@@ -1,8 +1,6 @@
 package com.sai.core.java;
 
-import java.util.Random;
-
-public  class FinalClass {
+public final class FinalClass {
 
 	public FinalClass() {
 
@@ -26,6 +24,11 @@ public  class FinalClass {
 	public final void finalFinalMethods() {
 
 		System.out.println("Final Class finalFinalMethods !!!");
+	}
+
+	public void finalNormalMethods() {
+		System.out.println("Final Class finalNormalMethods !!!");
+		
 	}
 
 }

@@ -2,11 +2,11 @@ package com.sai.core.java;
 
 public interface InterfaceTest {
 
-	int interfaceStaticVar = 2000;
+	static int interfaceStaticVar = 2000;
 	int interfaceNormalVar = 3000;
-	int interfaceFinalVar = 4000;
+	final int interfaceFinalVar  = 4000;
 
-	public void intfNormal();
+	public void intfNormalAbstract();
 
 	public static void intfStatic() {
 

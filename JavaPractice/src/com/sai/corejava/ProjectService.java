@@ -25,7 +25,7 @@ public class ProjectService {
 	}
 
 	public List<Project> getAllProjects() {
-		saveAllProjects() ;
+		saveAllProjects();
 		return projectsList;
 
 	}
@@ -42,7 +42,7 @@ public class ProjectService {
 	}
 
 	public List<Project> getProjectByTitles(String[] projectTitles) {
-		saveAllProjects() ;
+		saveAllProjects();
 		List<Project> requestedProjects = new ArrayList<Project>();
 		Project project;
 

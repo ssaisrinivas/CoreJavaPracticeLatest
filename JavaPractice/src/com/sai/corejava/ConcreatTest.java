@@ -16,7 +16,7 @@ public class ConcreatTest extends Abstract implements InterfaceTest {
 	 */
 
 	@Override
-	public void intfNormal() {
+	public void intfNormalAbstract() {
 		System.out.println("Interface Implemented Class ConcreatTest Method !! ");
 	}
 
@@ -40,11 +40,9 @@ public class ConcreatTest extends Abstract implements InterfaceTest {
 	}
 
 	public void absNormal() {
-		// super.absNormal();
+		super.absNormal();
 		System.out.println("Abstract class Normal Method implemented in ConcreatTest !!");
 	}
 	
-	
-
 
 }

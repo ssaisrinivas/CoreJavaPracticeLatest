@@ -1,32 +1,48 @@
 package com.sai.core.java;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class AnagramofStrings {
 	public static boolean areAnagrams(String str1, String str2) {
-	       
-		 str1 = str1.toLowerCase().replaceAll("\\n","");		 
-		 str2 = str2.toLowerCase().replaceAll("\\n","");	
-		 
-		 if(str1.length() != str2.length()) {return false;}
-		 
-		 char[] firstString = str1.toCharArray();
-		 char[] secondString = str2.toCharArray();
-		 
-		 Arrays.sort(firstString);
-		 Arrays.sort(secondString);
 
-		 return Arrays.equals(firstString, secondString);
-	    }
+		str1 = str1.toLowerCase().replaceAll("\\n", "");
+		str2 = str2.toLowerCase().replaceAll("\\n", "");
 
-	    public static void main(String[] args) {
-	        String s1 = "Listen";
-	        String s2 = "Silent";
-	        String s3 = "Hello";
-	        String s4 = "World";
+		if (str1.length() != str2.length()) {
+			return false;
+		}
 
-	        System.out.println("'" + s1 + "' and '" + s2 + "' are anagrams: " + areAnagrams(s1, s2)); // true
-	        System.out.println("'" + s3 + "' and '" + s4 + "' are anagrams: " + areAnagrams(s3, s4)); // false
-	        System.out.println("'Debit Card' and 'Bad Credit' are anagrams: " + areAnagrams("Debit Card", "Bad Credit")); // true
-	    }
+		char[] firstString = str1.toCharArray();
+		char[] secondString = str2.toCharArray();
+
+		Arrays.sort(firstString);
+		Arrays.sort(secondString);
+
+		return Arrays.equals(firstString, secondString);
+	}
+	
+	public static boolean  areAnagramsJ8(String str1, String str2) {
+		
+		if(str1.length() >0 && str2.length() >0 && str1.length() != str2.length()) {
+			
+			return str1.toLowerCase().chars().sorted().mapToObj(c -> (char)c).peek(System.out::println).toList().equals(str2.toLowerCase().chars().mapToObj(c -> (char)c).sorted(Comparator.naturalOrder()).peek(System.out::println).toList());
+
+		}
+		return false;
+	}
+
+	public static void main(String[] args) {
+		String s1 = "Listen";
+		String s2 = "Silent";
+		String s3 = "Hello";
+		String s4 = "World";
+
+		System.out.println("'" + s1 + "' and '" + s2 + "' are anagrams: " + areAnagrams(s1, s2)); // true
+		System.out.println("'" + s1 + "' and '" + s2 + "' are anagrams: " + areAnagramsJ8(s1, s2)); // true
+		System.out.println("'" + s1 + "' and '" + s2 + "' are anagrams: " + areAnagramsJ8("", "")); // true
+		System.out.println("'" + s3 + "' and '" + s4 + "' are anagrams: " + areAnagramsJ8(s3, s4)); // false
+		System.out.println("'" + s3 + "' and '" + s4 + "' are anagrams: " + areAnagrams(s3, s4)); // false
+		System.out.println("'Debit Card' and 'Bad Credit' are anagrams: " + areAnagrams("Debit Card", "Bad Credit")); // true
+	}
 }
