@@ -1,0 +1,25 @@
+Sealed classes, introduced in Java,
+ provide a mechanism to restrict the 
+ inheritance hierarchy of a class or interface.
+  This means that a sealed class or interface can only be
+  
+   extended or implemented by a predefined, specific set of classes or interfaces.
+    This feature enhances type safety and allows for exhaustive pattern matching with switch expressions. 
+Key Concepts:
+
+sealed keyword: Used to declare a class
+ or interface as sealed.
+permits keyword: Used after the se
+aled class or interface declaration to spec
+ify the direct subclasses or implementing classes that are allowed.
+Permitted Subclasses/Implementors: T
+hese classes must be declared as either final, sealed, or non-sealed.
+final: The subclass cannot be exten
+ded further.
+sealed: The subclass can be exten
+ded, but only by a specified se
+t of classes. 
+non-sealed: The subclass can b
+
+e extended without restrictions, effectively ending the sealed hierarchy at that point.
+Example:

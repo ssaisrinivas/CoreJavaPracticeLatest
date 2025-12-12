@@ -1,0 +1,18 @@
+public static void main(String[] args) {
+        // Declare and initialize resources outside the try-with-resources statement
+        FileReader fileReader = null;
+        BufferedReader bufferedReader = null;
+        FileWriter fileWriter = null;
+        PrintWriter printWriter = null;
+
+        try {
+            fileReader = new FileReader("input.txt"); // Assuming input.txt exists
+            bufferedReader = new BufferedReader(fileReader);
+            fileWriter = new FileWriter("output.txt");
+            printWriter = new PrintWriter(fileWriter);
+
+            // Use try-with-resources with the already initialized resources
+            try (fileReader; bufferedReader; fileWriter; printWriter) {
+                String line;
+                while ((line = bufferedReader.readLine()) != null) {
+                    printWriter.println(line);
